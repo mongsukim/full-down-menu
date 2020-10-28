@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>인재개발원_풀다운메뉴</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="js/jquery-3.5.0.min.js"></script>
+    <style>
+        *{margin:0; padding:0;}
+        body{font-family: 'Noto Sans KR', sans-serif;;}
+        li{list-style: none;}
+        a{text-decoration: none;}
+       
+       
+        .gnb_wrap{
+            position: fixed;
+            width: 100%;
+            height: 95px;
+            left: 0; top:0;
+            background-color: #fff;
+        }
+        .header{
+            width: 100%;
+            height: 95px;
+            border-bottom: 1px solid #d9d9d9;
+        }
+
+        .header .header-inner{
+            width: 1280px;
+            height: 95px;
+            margin: 0 auto;
+        }
+
+        .header .header-inner h1{
+            float:left;
+        }
+        .header .header-inner h1 a{
+            display: block;
+            width: 155px;
+            height: 23px;
+            background: url('images/logo_ko.png') no-repeat;
+            text-indent:-9999px;
+            margin-top:55px;
+        }
+
+        .header .header-inner .gnb{
+            float:left;
+            margin-top:55px;
+            margin-left: 20px;
+
+
+
+        }
+        .header .header-inner .gnb>li{
+            float:left;
+            position: relative;
+
+        }
+        .header .header-inner .gnb>li:hover>a{
+            color: #0a4498;
+        }
+
+
+
+        .header .header-inner .gnb>li>a{
+            display:block;
+            height: 38px;
+            padding: 0 35px;
+            font-size: 19px;
+            color: #0d0d0d;
+            font-weight: bold;
+        }
+
+        /* 2단메뉴 */
+        .header .header-inner .gnb>li>.depth2{
+            position:absolute; /*2단메뉴는 무조건 띄우기*/
+            left:35px; top:38px;
+            width: 200px;
+            padding-top: 30px;
+            display: none;
+        }
+
+
+        .header .header-inner .gnb>li>.depth2 li {
+            line-height: 36px;
+        }
+
+        .header .header-inner .gnb>li>.depth2 li a{
+            font-size: 15px;
+            color: #0d0d0d;
+            font-weight: 400;
+        }
+
+        .header .header-inner .gnb>li>.depth2 li a:hover{
+  
+            color: #0a4498;
+        
+        }
+
+
+        .main{
+            width: 100%;
+
+        }
+
+        .main .visual{
+            width: 100%;
+            height: 1080px;
+            background: url(images/scroll_bg1.jpg) no-repeat center top;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="gnb_wrap">
+            <div class="header-inner">
+                <ul class="gnb">
+                <li>
+                    <a href="#">
+                        인재개발원 소개
+                    </a>
+                    <ul class="depth2">
+                        <li><a href="#">인사말</a></li>
+                        <li><a href="#">오시는 길</a></li>
+                        <li><a href="#">새 소식</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        시설 안내
+                    </a>
+                    <ul class="depth2">
+                        <li><a href="#">시설 개요</a></li>
+                        <li><a href="#">교육 시설</a></li>
+                        <li><a href="#">숙박 시설</a></li>
+                        <li><a href="#">편의 시설</a></li>
+                        <li><a href="#">시설 단면도</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">프로그램 안내</a>
+                    <ul class="depth2">
+                        <li><a href="#">챌린지 코스</a></li>
+                        <li><a href="#">에스원 바이크 스쿨</a></li>
+                        <li><a href="#">블루에셋 기술교육센터</a></li>
+                        <li><a href="#">경비원 교육</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">예약 문의</a>
+                    <ul class="depth2">
+                        <li><a href="#">시설 문의</a></li>
+                        <li><a href="#">프로그램 문의</a></li>
+                        <li><a href="#">예약 조회</a></li>
+                        <li><a href="#">간편 견적</a></li>
+                    </ul>
+                </li>
+                </ul>
+            </div>
+        </div>
+            
+        </div>
+    </div>
+   
+
+    <script>
+        $(function(){
+            $('.gnb_wrap').mouseenter(function(){
+                $('.depth2').show();
+                    $('.gnb_wrap').stop().animate({'height':320});
+            });
+            $('.gnb_wrap').mouseleave(function(){
+                $('.gnb_wrap').stop().animate({'height':95});
+                $('.depth2').hide();
+            });
+        });
+    </script>
+</body>
+</html>
